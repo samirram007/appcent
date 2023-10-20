@@ -1,0 +1,105 @@
+:root{
+    --page-background: #122E40;
+    --new-page-background: #29F2CD;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(to right top, #590f32, #491029, #391021, #2a0f19, #1d0a11, #250f16, #2e121a, #38151d, #5f1c28, #88222f, #b12c30, #d93a2b) !important;
+}
+
+.welcome_logo{
+    width: 50px;
+    height: 30px;
+}
+
+
+.sign-up-btn{
+    letter-spacing: 2px;
+    font-size: 17px;
+    position: relative;text-transform: lowercase;
+}
+
+.sign-up-btn::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #F2F2F2;
+    transition: all 1s linear eas;
+
+}
+
+.sign-up-btn:hover{
+    text-shadow: 1px 1px 1px #686868c9,
+    1px 1.5px 1.9px #7c7c7ca9,
+    1px 1.9px 2.6px #57575791,
+    1px 2.5px 2.9px #aaaaaaab,
+    1px 3px 3.5px #3b3b3ba4;
+}
+
+.sign-up-btn::after{
+    transform: scale(0,1);
+    transition: transform 0.3s ease;
+}
+
+.sign-up-btn:hover::after{
+    transform: scale(1,1);
+
+}
+
+
+
+.member-card-title{
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+
+.member-card-name{
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.member-card-detail{
+    border-radius: 9px;
+    color: #e2e2e2;
+    background-image: linear-gradient(to left top, #d97c2b, #da6e28, #da5f27, #da4e28, #d93a2b) !important;
+}
+
+
+.member-description{
+    text-align: center;
+    font-weight: 600;
+}
+
+.member-button{
+    position: absolute;
+    font-size: 15px;
+    font-weight: 700;
+    color: #250f0f;
+    overflow: hidden;
+    /* left: 0; */
+    bottom: 28px;
+    border: 2px solid #A6418B;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background-color: white !important;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    letter-spacing: 1px;
+}
