@@ -12,9 +12,16 @@
                       <div class="pt-3 pb-5">
                           <p class="text-center fw-bold fs-5 ">{{$package->amount}}</p>
                       </div>
+<<<<<<< HEAD
                       <div class="px-3">
                           <p class="member-description">{{$package->description}}</p>
                       </div>
+=======
+                      <div class="text-center d-flex justify-content-center">
+                        <a href="{{ route('register',$package->id) }}" class="text-center member-button">Sign Up</a>
+                      </div>
+
+>>>>>>> 17065e89bd8537505b4463ebe11dd3882bf6c37e
                     </div>
                     <div class="text-center d-flex justify-content-center">
                       <a href="{{route('register')}}" class="text-center member-button">Sign Up</a>

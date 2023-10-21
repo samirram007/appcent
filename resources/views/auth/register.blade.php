@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 {{-- <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
+=======
+<x-guest-layout>
+    <form method="POST" action="{{ route('register',$package_id) }}">
+>>>>>>> 17065e89bd8537505b4463ebe11dd3882bf6c37e
         @csrf
 
         <!-- Name -->

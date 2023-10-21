@@ -18,9 +18,10 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create($package_id): View
     {
-        return view('auth.register');
+        $data['package_id']=$package_id;
+        return view('auth.register',$data);
     }
 
     /**
@@ -28,17 +29,17 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request,$package_id): RedirectResponse
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'email' => ['required', 'string', 'email', 'max:255']
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'package_id'=>$package_id,
             'password' => Hash::make($request->password),
         ]);
 
