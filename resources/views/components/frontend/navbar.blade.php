@@ -16,13 +16,8 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li> --}}
         </ul>
-<<<<<<< HEAD
         <form class="d-flex" role="search">
-          <a href="{{route('register')}}" class="text-white sign-up-btn text-decoration-none fw-bold">SignUp</a>
-=======
-        <form class="d-none" role="search">
-          <a href="#" class="text-white sign-up-btn text-decoration-none fw-bold">SignUp</a>
->>>>>>> 17065e89bd8537505b4463ebe11dd3882bf6c37e
+          <a href="#" class="text-white sign-up-btn text-decoration-none fw-bold">SignIn</a>
         </form>
       </div>
     </div>

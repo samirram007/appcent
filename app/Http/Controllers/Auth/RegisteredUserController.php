@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -29,24 +30,61 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request,$package_id): RedirectResponse
+    public function store(Request $request,$package_id)
     {
-        $request->validate([
+        
+
+        $validator = Validator::make($request->all(),[
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255']
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'package_id'=>$package_id,
-            'password' => Hash::make($request->password),
-        ]);
+        // $user = User::create([
+        //     'name' => $request->name,
+        //     $uname = substr($request->name,0,2),
+        //     $codename = $this->GenerateUserName($uname),
+        //     dd($codename),
+        //     'email' => $request->email,
+        //     'package_id'=>$package_id,
+        //     'password' => Hash::make($request->password),
+        // ]);
+
+      
+        $user = new User();
+        $user->name = $request->name;
+        $uname = substr($request->name,0,2);
+        $codename = $this->GenerateUserName($uname);
+        $user->code = $codename;
+        $user->email = $request->email;
+        $user->passcode = random_int(1000,9999);
+        $user->package_id =$package_id;
+        $user->password = Hash::make($request->password);
+        $user->save();
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
+            return view('pages.user_detail',compact('user'));
     }
+
+    public function GenerateUserName($uname)
+    {
+        $number = uniqid( $uname,false);
+        
+        if($this->UserNameExists($number))
+        {
+            return $this->GenerateUserName($uname);
+        }
+        
+         return $number;
+    }
+
+    public function UserNameExists($number)
+    {
+        return User::where('code',$number)->exists();
+    }
+
+
 }

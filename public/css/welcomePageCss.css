@@ -10,7 +10,10 @@
 }
 
 body{
+    /* padding-bottom: 100px; */
     height: 100vh;
+    /* min-height: max-content; */
+    background-repeat: no-repeat;
     background-image: linear-gradient(to right top, #590f32, #491029, #391021, #2a0f19, #1d0a11, #250f16, #2e121a, #38151d, #5f1c28, #88222f, #b12c30, #d93a2b) !important;
 }
 
@@ -144,9 +147,27 @@ body{
 }
 
 .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: red;
+    color: rgba(196, 196, 196, 0.897) !important;
 }
 
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
-            color: red;
+    color: rgba(196, 196, 196, 0.897) !important;
+ }
+
+
+ .detail-card-img{
+    width: 180px;
+    height: 180px;
+ }
+
+
+ .user-detail-card{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.199), rgba(255, 255, 255, 0.171));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(15px);
+ }
+
+ .user-credentials{
+    color: #1d0a11;
+    font-weight: 700;
  }
