@@ -16,7 +16,7 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li> --}}
         </ul>
-        <form class="d-flex" role="search">
+        <form class="d-none" role="search">
           <a href="#" class="text-white sign-up-btn text-decoration-none fw-bold">SignUp</a>
         </form>
       </div>

@@ -18,9 +18,9 @@
                         </div>
                       </div>
                       <div class="text-center d-flex justify-content-center">
-                        <a href="#" class="text-center member-button">Sign Up</a>
+                        <a href="{{ route('register',$package->id) }}" class="text-center member-button">Sign Up</a>
                       </div>
-                     
+
                     </div>
                   </div>
             </div>

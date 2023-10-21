@@ -14,8 +14,18 @@ class UserSeeder extends Seeder
     public function run(): void
     {
        Package::create([
-        'name' => 'Yearly',
-        'amount' => 2000,
+        'name' => '1K',
+        'amount' => 1000,
+        'description' => '  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo excepturi hic '
+       ]);
+       Package::create([
+        'name' => '3K',
+        'amount' => 3000,
+        'description' => '  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo excepturi hic '
+       ]);
+       Package::create([
+        'name' => '5K',
+        'amount' => 5000,
         'description' => '  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo excepturi hic '
        ]);
     }
