@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('passcode')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('packege_id');
+            $table->unsignedBigInteger('package_id');
             $table->bigInteger('salary')->nullable();
             $table->rememberToken();
             $table->timestamps();

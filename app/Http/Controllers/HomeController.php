@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['collections'] = Package::all();
-        return view('home',$data);
+        return view('components.frontend.welcome_page',$data);
     }
 
     /**

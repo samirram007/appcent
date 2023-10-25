@@ -1,6 +1,6 @@
 <nav class="bg-transparent navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="{{asset('logo.png')}}" alt="" class="welcome_logo" srcset=""></a>
+      <a class="navbar-brand" href="/"><img src="{{asset('logo.png')}}" alt="" class="welcome_logo" srcset=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,8 +16,8 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li> --}}
         </ul>
-        <form class="d-none" role="search">
-          <a href="#" class="text-white sign-up-btn text-decoration-none fw-bold">SignUp</a>
+        <form class="d-flex" role="search">
+          <a href="#" class="text-white sign-up-btn text-decoration-none fw-bold">SignIn</a>
         </form>
       </div>
     </div>
